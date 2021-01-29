@@ -42,7 +42,6 @@ class ItemsController < ApplicationController
     end
 
    def delete
-    byebug
     @item = Item.find(params[:id])
       if @item.destroy 
         @status=true

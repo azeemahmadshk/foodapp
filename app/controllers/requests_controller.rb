@@ -1,6 +1,5 @@
 class RequestsController < ApplicationController
   def create
-    byebug
     if params[:request][:sender_id] || params[:request][:user_id].present?
       @request = Request.new(request_params)
       if @request.save!
@@ -13,7 +12,6 @@ class RequestsController < ApplicationController
     end
   end
   def request_accepted
-    byebug
     @request = Request.find(params[:id])
     if params[:request][:status] == 'accepted'
         if @request.sender_id.present?

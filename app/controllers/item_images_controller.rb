@@ -12,7 +12,6 @@ class ItemImagesController < ApplicationController
 	  	end
 
   def show
-  	byebug
   	@item = Item.find(params[:item_id])
   	@picture = @item.item_images
     # render json: {url: picture}
